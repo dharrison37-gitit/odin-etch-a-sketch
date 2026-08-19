@@ -13,17 +13,21 @@ body {
 }
 
 .container {
-    width: 800px;
-    height: 800px;
+    /* width: 960px; */
+    /* height: 800px; */
     border: 1px solid #000;
     display: flex;
     flex-flow: row wrap;
     column-gap: 1px;
     justify-content: center;
     align-items: center;
-    margin: 0px auto;
+    margin: 30px auto;
 }
 
-.hover:hover {
-    background-color: teal;
+.grid-size {
+    width: 150px;
+    height: 30px;
+    border: 1px solid indigo;
+    border-radius: 8px;
+    font-size: 18px;
 }
