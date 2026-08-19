@@ -1,0 +1,29 @@
+* {
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 800px;
+    height: 800px;
+    border: 1px solid #000;
+    display: flex;
+    flex-flow: row wrap;
+    column-gap: 1px;
+    justify-content: center;
+    align-items: center;
+    margin: 0px auto;
+}
+
+.hover:hover {
+    background-color: teal;
+}
