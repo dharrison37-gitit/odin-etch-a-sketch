@@ -7,3 +7,8 @@
   doing research help somewhat, but turned out to be a math calculation
   error as well as a styling issue
 - I will give the extra credit portions a go and update the README after
+
+## Extra credit
+
+- Complete extra credit to use a random colors
+- Also added a button to switch between default color (black) and random colors
