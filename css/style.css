@@ -23,7 +23,12 @@ body {
     border: 1px solid;
 }
 
-.grid-size-btn {
+.controls {
+    display: flex;
+    gap: 20px;
+}
+
+.btn {
     background-color: dodgerblue;
     color: white;
     width: 200px;

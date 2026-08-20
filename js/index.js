@@ -1,10 +1,15 @@
 "use strict";
 
+const RANDOM_COLOR = "Random Color";
+const DEFAULT_COLOR = "Default Color";
+
+const gridSizeButton = document.querySelector(".grid-size");
+const colorButton = document.querySelector(".grid-color");
+
 let squaresPerSide = 16;
+let random = false;
 
-const gridSize = document.querySelector("button");
-
-gridSize.addEventListener("click", () => {
+gridSizeButton.addEventListener("click", () => {
     squaresPerSide = parseInt(prompt("Enter new grid square size 1 to 100"));
 
     if (squaresPerSide > 100 || squaresPerSide < 1) return;
@@ -12,12 +17,32 @@ gridSize.addEventListener("click", () => {
     generateGrid(squaresPerSide);
 });
 
+colorButton.addEventListener("click", () => {
+    if (colorButton.textContent === RANDOM_COLOR) {
+        colorButton.textContent = DEFAULT_COLOR;
+        random = true;
+    } else {
+        colorButton.textContent = RANDOM_COLOR;
+        random = false;
+    }
+});
+
+function getColor(random = false) {
+    if (!random) return "rgb(0 0 0 / 100%)";
+
+    const R = Math.floor(Math.random() * 256);
+    const G = Math.floor(Math.random() * 256);
+    const B = Math.floor(Math.random() * 256);
+    const A = Math.floor(Math.random() * 100);
+    return `rgb(${R} ${G} ${B} / ${A})`;
+}
+
 function generateGrid(squaresPerSide) {
     const container = document.querySelector(".container");
 
     let divSize = (container.offsetWidth - 2) / squaresPerSide;
 
-    if (gridSize) {
+    if (gridSizeButton) {
         container.replaceChildren();
     }
 
@@ -40,7 +65,7 @@ function generateGrid(squaresPerSide) {
     const gridSquares = document.querySelectorAll(".column");
     gridSquares.forEach((square) =>
         square.addEventListener("mouseenter", (e) => {
-            square.style.backgroundColor = "#000";
+            square.style.backgroundColor = getColor(random);
         }),
     );
 }
