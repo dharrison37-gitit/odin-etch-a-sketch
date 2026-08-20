@@ -40,7 +40,7 @@ function getColor(random = false) {
 function generateGrid(squaresPerSide) {
     const container = document.querySelector(".container");
 
-    let divSize = (container.offsetWidth - 2) / squaresPerSide;
+    let divSize = container.offsetWidth / squaresPerSide;
 
     if (gridSizeButton) {
         container.replaceChildren();
